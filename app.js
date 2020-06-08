@@ -6,17 +6,17 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
 var app = express();
-var mongoose=require('mongoose');
-var Estrella=require('./model/Estrellas');
 
+var mongoose=require('mongoose');
+var Estrella=require('./model/Estrella');
 mongoose.connect('mongodb+srv://Project:xaf93iW15VARVj7B@cluster0-d4lgh.mongodb.net/Estrellas?retryWrites=true&w=majority', {
     useNewUrlParser: true
   }).then(() => {
     console.log('Conectado a Mongo DB Atlas')
   })
   .catch(err => console.log(err));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/estrellas', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
