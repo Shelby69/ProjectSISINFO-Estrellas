@@ -1,15 +1,15 @@
 var mongoose=require('mongoose');
 var Schema = mongoose.Schema;
-
 var EstrellaSchema = Schema(
-{
-	Tipo:String,
-	Tamaño:String,
-	Brillo:String,
-	Color:String,
-	Temperatura:String,
-	Nombre:String,
-	Edad:String
-});
+	{
+	tipo:String,
+	tamaño:String,
+	brillo:String,
+	color:String,
+	temperatura:String,
+	nombre:String,
+	edad:String
+	}
+);
 
-module.exports = mongoose.model('Estrellas', EstrellaSchema);
+module.exports = mongoose.model('Estrella',EstrellaSchema);
