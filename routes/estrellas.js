@@ -20,6 +20,9 @@ router.get('/:estrellaId', (req,res,next)=>{
     }
   });
 });
+router.get('/alta', (req, res, next)=>{
+  res.render('alta_estrella', {})
+});
 
 router.post('/',(req, res, next)=>{
   var estrella=Estrella({
