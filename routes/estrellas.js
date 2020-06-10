@@ -29,7 +29,8 @@ router.post('/',(req, res, next)=>{
     color:req.body.color,
     temperatura:req.body.temperatura,
 	  nombre:req.body.nombre,
-    edad:req.body.edad
+    edad:req.body.edad,
+    imagen:req.body.imagen
   });
   estrella.save((err,datos)=>{
     if (err) res.status(404).json({mensaje:'error'});
