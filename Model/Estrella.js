@@ -3,12 +3,12 @@ var Schema = mongoose.Schema;
 var EstrellaSchema = Schema(
 	{
 	tipo:String,
-	tamaño: Number,
+	tamaño: String,
 	brillo:String,
 	color:String,
-	temperatura:Number,
+	temperatura:String,
 	nombre:String,
-	edad:Number,
+	edad:String,
 	imagen:String
 	}
 );
