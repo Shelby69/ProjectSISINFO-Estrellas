@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var Estrella = require('../model/estrella');
+var Estrella = require('../model/estrella.js');
 
 router.get('/',(req, res, next)=>{
   Estrella.find( {} ,(err,datos)=>{
@@ -24,7 +24,7 @@ router.get('/alta', (req, res, next)=>{
   res.render('alta_estrella', {})
 });
 
-router.post('/',(req, res, next)=>{
+router.post('/grabar',(req, res, next)=>{
   var estrella=Estrella({
     tipo:req.body.tipo,
     tamaño:req.body.tamaño,
