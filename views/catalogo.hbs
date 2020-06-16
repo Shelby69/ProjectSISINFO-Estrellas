@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/lib/bootstrap.min.css">
   <script src="/lib/jquery-1.12.2.min.js"></script>
   <script src="/lib/bootstrap.min.js"></script>
-</head>
 <div class="row">
   {{#each estrellas}}
-  <div class="col">
-    <div class="card" style="width:300px">
+  <div class="col-sm-3">
+    <div class="card mb-3" style="width:18rem;">
       <img class="card-img-top" src="{{imagen}}" alt="Catalogo" style="width:100%">
       <div class="card-body">
         <h4 class="card-title">{{nombre}}</h4>
@@ -27,4 +23,3 @@
   </div>
   {{/each}}
 </div>
-</html>

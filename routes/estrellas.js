@@ -14,7 +14,7 @@ router.get('/',(req, res, next)=>{
 router.get('/:estrellaId', (req,res,next)=>{
   Estrella.findOne({'_id':req.params.estrellaId},(err,datos)=>{
     if(datos == null){
-      res.status(404).jason({"mensaje":"No encontrado"});
+      res.status(404).json({"mensaje":"No encontrado"});
     }else {
       res.status(200).json(datos);
     }
