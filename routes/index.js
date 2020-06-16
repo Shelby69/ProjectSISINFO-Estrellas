@@ -62,7 +62,7 @@ router.delete('/', (req,res,next)=>{
   res.status(405).json({mensaje:"Acción no permitida"});
 });
 
-router.delete('/:estrellaId',(req,res,next)=>{
+router.delete('/eliminar/:estrellaId',(req,res,next)=>{
   Estrella.findOneAndDelete({'_id':req.params.estrellaId},(err,datos)=>{
     if(err) res.status(404).json(err);
     else res.status(200).json(datos);
