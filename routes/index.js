@@ -65,7 +65,7 @@ router.delete('/', (req,res,next)=>{
 router.delete('/eliminar/:estrellaId',(req,res,next)=>{
   Estrella.findOneAndDelete({'_id':req.params.estrellaId},(err,datos)=>{
     if(err) res.status(404).json(err);
-    else res.status(200).json(datos);
+    else res.render('eliminado',datos);
   });
 });
 
