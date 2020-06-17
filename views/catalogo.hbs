@@ -11,12 +11,10 @@
         <h4 class="card-title">{{nombre}}</h4>
           <p class="card-text">{{tipo}}</p>
           <a href="#demo" class="btn btn-info" data-toggle="collapse">Mostrar todo</a>
-
-<!--          <form action="eliminar/{{_id}}?_method=DELETE" method='POST' >
-            <input type="hidden" name="_method" value="DELETE">
-              <button type="submit" class = "btn btn-success" > Actualizar</button>
-         </form>
--->         
+          <a href="/editar/{{_id}}" class="btn btn-block" >Actualizar</a>
+      <!--   <form class="/editar/{{_id}}" method='POST'>
+              <button type="button" name="btn btn-dark">Actualizar</button>
+          </form>-->
           <form action="eliminar/{{_id}}?_method=DELETE" method='POST' >
             <input type="hidden" name="_method" value="DELETE">
               <button type="submit" class = "btn btn-danger" > Eliminar</button>

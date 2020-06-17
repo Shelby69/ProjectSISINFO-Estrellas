@@ -69,4 +69,30 @@ router.delete('/eliminar/:estrellaId',(req,res,next)=>{
   });
 });
 
+router.get('/editar/:estrellaId', (req, res, next)=>{
+  Estrella.findById({'_id':req.params.estrellaId}, (err,datos)=>{
+    if(err)res.status(400).json({mensaje:"Error en el api"});
+    else res.render('editar', datos);
+  });
+});
+
+router.patch('/', (req, res, next)=>{
+  res.status(405).json({mensaje:"Accion no permitida"});
+});
+
+router.patch('/editar/:estrellaId', (req, res, next)=>{
+  Estrella.findByIdAndUpdate({'_id':req.params.estrellaId},
+    {'nombre':req.body.nombre,
+    'tipo':req.body.tipo,
+    'tamaño':req.body.tamaño,
+    'brillo':req.body.brillo,
+    'color':req.body.color,
+    'temperatura':req.body.temperatura,
+    'edad':req.body.edad,
+    'imagen':req.body.imagen},(err,data)=>{
+    if(err) res.status(404).json(err);
+    else res.redirect('/lista');
+  });
+});
+
 module.exports = router;
